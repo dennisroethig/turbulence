@@ -1,23 +1,21 @@
 import React from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import Header from '../components/Header';
-import SpotList from '../components/SpotList';
-import * as actions from '../actions/spots';
+import * as actions from '../../actions/spots';
+import Header from '../Header';
 
 @connect(state => ({
     spots: state.spots
 }))
-export default class TurbulenceApp {
+export default class Application {
     render() {
         const { spots, dispatch } = this.props;
         const creators = bindActionCreators(actions, dispatch);
-        // return <Counter {...this.props} {...creators} />;
 
         return (
-            <div>
+            <div {...this.props} {...creators} >
                 <Header title="My App Title" />
-                <SpotList spots={this.props.spots} />
+                {this.props.children}
             </div>
         );
     }
