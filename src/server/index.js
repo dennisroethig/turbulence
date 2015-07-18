@@ -1,9 +1,20 @@
-var koa = require('koa');
-var app = koa();
+global.__CLIENT__ = false;
+global.__SERVER__ = true;
 
-app.use(function *(){
-  this.body = 'Hello World';
-});
+import 'babel/polyfill';
+import koa from 'koa';
 
-console.log('App startet on http://localhost:3000');
+const app = koa();
+export default app;
+
+import serve from 'koa-static';
+app.use(serve('public'));
+
+import api from './api';
+app.use(api());
+
+import counter from './counter';
+app.use(counter());
+
 app.listen(3000);
+console.log('ready');
