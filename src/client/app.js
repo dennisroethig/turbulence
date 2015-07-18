@@ -4,16 +4,16 @@ window.__SERVER__ = false;
 import 'babel/polyfill';
 
 import React from 'react';
-import { Provider } from 'redux/react';
+import { Provider } from 'react-redux';
 import TurbulenceApp from '../shared/containers/TurbulenceApp';
-import create from '../shared/redux';
-import * as stores from '../shared/stores';
+import getReduxStore from '../shared/utils/getReduxStore';
+import * as reducers from '../shared/reducers';
 
 const state = window.__initialState;
-const redux = create(stores, state);
+const store = getReduxStore(reducers, state);
 
 React.render(
-    <Provider redux={redux}>
+    <Provider store={store}>
         {()=><TurbulenceApp />}
     </Provider>,
     document.getElementById('App')

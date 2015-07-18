@@ -21,15 +21,6 @@ const app = koa()
     .use(route.get('/api/spots', function* () {
         this.body = spots;
     }))
-    .use(route.get('/api/count', function* () {
-        this.body = server_count;
-    }))
-    .use(route.post('/api/count/inc', function* () {
-        this.body = ++server_count;
-    }))
-    .use(route.post('/api/count/dec', function* () {
-        this.body = --server_count;
-    }))
     ;
 
 export default function () {

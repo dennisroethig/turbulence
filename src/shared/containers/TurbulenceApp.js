@@ -1,6 +1,6 @@
 import React from 'react';
 import { bindActionCreators } from 'redux';
-import { connect } from 'redux/react';
+import { connect } from 'react-redux';
 import Header from '../components/Header';
 import SpotList from '../components/SpotList';
 import * as actions from '../actions/spots';
