@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/dennisroethig/turbulence/issues"
   },
-  "homepage": "https://github.com/dennisroethig/turbulence#readme"
+  "homepage": "https://github.com/dennisroethig/turbulence#readme",
+  "dependencies": {
+    "koa": "^0.21.0"
+  }
 }
