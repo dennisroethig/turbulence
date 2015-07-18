@@ -1,13 +1,12 @@
-import { UPDATE_COUNTER } from './constants/ActionTypes';
+import { LOAD_SPOTS } from './constants/ActionTypes';
 
 export default {
-  counter: function (init=0, {type, count}) {
-    switch (type) {
-      case UPDATE_COUNTER:
-        return count;
-      default:
-        return init;
+    spots: function (init=[], {type, result}) {
+        switch (type) {
+            case LOAD_SPOTS:
+                return result;
+            default:
+                return init;
+        }
     }
-  }
 }
-
