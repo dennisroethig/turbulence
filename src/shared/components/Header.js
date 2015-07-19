@@ -1,4 +1,5 @@
 import React, { PropTypes } from 'react';
+import {Link} from 'react-router';
 
 export default class Header {
     static propTypes = {
@@ -11,6 +12,17 @@ export default class Header {
         return (
             <header>
                 {`APP HEADER: ${title}`}
+                <ul>
+                    <li>
+                        <Link to={`/spots`}>spots</Link>
+                    </li>
+                    <li>
+                        <Link to={`/spots/1`}>spot 1</Link>
+                    </li>
+                    <li>
+                        <Link to={`/spots/2`}>spot 2</Link>
+                    </li>
+                </ul>
             </header>
         );
     }
