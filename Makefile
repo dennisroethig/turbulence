@@ -9,10 +9,15 @@ all: build
 dev-server: $(LIB_JS); $(BIN)/nodemon --harmony
 webpack-server: $(LIB_JS); node --harmony ./lib/server/webpack
 watch:; $(BIN)/babel src -d lib -e 0 -s inline -w
+watch-sass:; $(BIN)/nodemon -e scss -w src/styles -x 'npm run build-sass'
 
 build: js webpack
 webpack: public/js/app.js
 clean:; rm -rf public lib
+
+fonts:
+	mkdir -p public
+	cp -a src/fonts/. public/fonts
 
 public/js/app.js: $(SRC_JS); $(BIN)/webpack
 js: $(LIB_JS)

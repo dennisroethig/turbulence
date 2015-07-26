@@ -10,19 +10,12 @@ export default class Header {
         const { title } = this.props;
 
         return (
-            <header>
-                {`APP HEADER: ${title}`}
-                <ul>
-                    <li>
-                        <Link to={`/spots`}>spots</Link>
-                    </li>
-                    <li>
-                        <Link to={`/spots/1`}>spot 1</Link>
-                    </li>
-                    <li>
-                        <Link to={`/spots/2`}>spot 2</Link>
-                    </li>
-                </ul>
+            <header className="header">
+                <Link to={`/spots`}>spots</Link>
+                {` | `}
+                <Link to={`/spots/1`}>spot 1</Link>
+                {` | `}
+                <Link to={`/spots/2`}>spot 2</Link>
             </header>
         );
     }

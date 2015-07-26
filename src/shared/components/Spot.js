@@ -1,19 +1,21 @@
-import React, { PropTypes } from 'react';
+import React, {PropTypes} from 'react';
+import ForecastDisplay from './ForecastDisplay';
 
-export default class Spot {
+export default class Spot extends React.Component {
+
     static propTypes = {
-        spot: PropTypes.object.isRequired
+        spot: PropTypes.object.isRequired,
+        forecast: PropTypes.array
+    };
+
+    static defaultProps = {
+        forecast: []
     };
 
     render() {
-        const { spot } = this.props;
-
-        return (
-            <div>
-                <h1>{`Spot`}</h1>
-                <h2>{`Id: ${spot.id}`}</h2>
-                <h2>{`Name: ${spot.name}`}</h2>
-            </div>
-        );
+        return this.props.forecast.length
+        ? <ForecastDisplay forecasts={ this.props.forecast } />
+        : <div className="spinner">Loading...</div>;
     }
+
 }

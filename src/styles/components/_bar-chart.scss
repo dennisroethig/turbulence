@@ -1,0 +1,28 @@
+.bar-chart {
+    position: relative;
+}
+
+.bar-chart__bars {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: flex-end;
+
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+}
+
+.bar-chart:first-child .bar-chart__bars { border-left-width: 0; }
+.bar-chart:last-child .bar-chart__bars { border-right-width: 0; }
+
+.bar-chart__label {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 4px;
+    right: 4px;
+    /*background-color: #900;*/
+    padding-top: 5px;
+    padding-bottom: 5px;
+    text-align: center;
+}

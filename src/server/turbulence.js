@@ -7,9 +7,10 @@ import { Provider } from 'react-redux';
 import { loadSpots } from '../shared/actions/spots';
 import * as reducers from '../shared/reducers';
 
-import Router from 'react-router';
+import Router, {Route} from 'react-router';
 import Location from 'react-router/lib/Location';
 import routes from '../shared/routes';
+import { reduxRouteComponent } from 'redux-react-router';
 
 nunjucks.configure('views', { autoescape: true });
 
@@ -31,7 +32,13 @@ export default function turbulence() {
             // Get application rendered to string
             const appString = React.renderToString(
                 <Provider store={store}>
-                    { ()=> <Router {...state} /> }
+                    { ()=> {
+                        return(
+                            <Router {...state}>
+                                <Route component={reduxRouteComponent(store)} />
+                            </Router>
+                        );
+                    } }
                 </Provider>
             );
 

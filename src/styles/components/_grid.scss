@@ -1,0 +1,31 @@
+.grid__unit--h {
+    position: relative;
+    display: block;
+    flex-grow: 1;
+    /*border: 3px solid blue;*/
+    /*height: 5px;*/
+    width: 100%;
+    /*background-color: #444;*/
+    border-top: 1px solid #E1F5FE;
+}
+
+.grid__item {
+    position: absolute;
+    color: #E1F5FE;
+    font-size: 26px;
+    top: 0;
+}
+
+.grid__item--left {
+    transform: translateX(-100%) translateY(-50%);
+    padding-right: 10px;
+    left: 0;
+}
+
+.grid__item--right {
+    transform: translateX(100%) translateY(-50%);
+    padding-left: 10px;
+    right: 0;
+}
+
+.grid__unit--h:last-child { border-bottom: 1px solid #E1F5FE; }

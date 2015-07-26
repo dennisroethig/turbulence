@@ -1,0 +1,28 @@
+@import "../../node_modules/normalize.css/normalize";
+
+@import "./components/bar";
+@import "./components/bar-chart";
+@import "./components/content";
+@import "./components/fonts";
+@import "./components/forecast-display";
+@import "./components/grid";
+@import "./components/header";
+@import "./components/spinner";
+@import "./components/wrapper";
+
+html {
+  box-sizing: border-box;
+  font: 1em "League Gothic", sans-serif;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+html, body {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    font: 1em "League Gothic", sans-serif;
+}

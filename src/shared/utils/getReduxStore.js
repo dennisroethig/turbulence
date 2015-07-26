@@ -1,7 +1,11 @@
+import { routerStateReducer } from 'redux-react-router';
 import { createStore, combineReducers, applyMiddleware } from 'redux';
 
 export default function getReduxStore(reducers, initialState) {
-    const reducer = combineReducers(reducers);
+    const reducer = combineReducers({
+        router: routerStateReducer,
+        ...reducers
+    });
     const createStoreWithMiddleware = applyMiddleware(promiseMiddleware)(createStore);
 
     return createStoreWithMiddleware(reducer, initialState);

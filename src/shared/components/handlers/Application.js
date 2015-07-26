@@ -13,9 +13,11 @@ export default class Application {
         const creators = bindActionCreators(actions, dispatch);
 
         return (
-            <div {...this.props} {...creators} >
+            <div {...this.props} {...creators} className="wrapper">
                 <Header title="My App Title" />
-                {this.props.children}
+                <div className="content">
+                    {this.props.children}
+                </div>
             </div>
         );
     }
